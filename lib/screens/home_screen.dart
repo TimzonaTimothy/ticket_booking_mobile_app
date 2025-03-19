@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/media.dart';
 
 import '../base/res/styles/app_styles.dart';
 
@@ -44,8 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       width: 50,
                       height: 50,
-                      decoration:  BoxDecoration(color: Colors.blue, 
-                      borderRadius: BorderRadius.circular(10),)
+                      decoration:  BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(image: AssetImage(AppMedia.logo))
+                      )
                     ),
                   ],
                 ),
