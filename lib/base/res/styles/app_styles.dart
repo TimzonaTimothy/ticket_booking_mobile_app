@@ -4,11 +4,18 @@ Color primary = const Color(0XFF687daf);
 
 class AppStyles {
   static Color primaryColor = primaryColor;
+  static Color bgColor = const Color(0xFFeeedf2);
   static Color textColor = const Color(0XFF3b3b3b);
+  static TextStyle textStyle =
+      TextStyle(fontSize: 16, color: textColor, fontWeight: FontWeight.w500);
 
-  static TextStyle headLineStyle1 = TextStyle(
-      fontSize: 26, fontWeight: FontWeight.w700, color: textColor);
-      
+  static TextStyle headLineStyle1 =
+      TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: textColor);
+  static TextStyle headLineStyle2 =
+      TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: textColor);
+
   static TextStyle headLineStyle3 = const TextStyle(
-      fontSize: 17, fontWeight: FontWeight.w500,);
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+  );
 }
