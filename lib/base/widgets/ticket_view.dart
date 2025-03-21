@@ -4,6 +4,7 @@ import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'app_layoutbuilder_widget.dart';
 import 'big_circle.dart';
 import 'big_dot.dart';
+import 'text_style_fourth.dart';
 import 'text_style_third.dart';
 
 class TicketView extends StatelessWidget {
@@ -56,12 +57,7 @@ class TicketView extends StatelessWidget {
                       )),
                       const BigDot(),
                       Expanded(child: Container()),
-                      Text(
-                        'ABJ',
-                        style: AppStyles.headLineStyle3
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      const TextStyleThird(text: 'ABJ'),
                     ],
                   ),
 
@@ -73,15 +69,8 @@ class TicketView extends StatelessWidget {
 
                   Row(
                     children: [
-                      SizedBox(
-                        width: 100,
-                        child: Text(
-                          'Enugu',
-                          style: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
+                      const SizedBox(
+                          width: 100, child: TextStyleFourth(text: 'Enugu')),
                       Expanded(child: Container()),
                       Text(
                         '1H 30M',
@@ -90,16 +79,11 @@ class TicketView extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       Expanded(child: Container()),
-                      SizedBox(
-                        width: 100,
-                        child: Text(
-                          'Abuja',
-                          style: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.end,
-                        ),
-                      ),
+                      const SizedBox(
+                          width: 100,
+                          child: TextStyleFourth(
+                            text: 'Abuja',
+                          )),
                     ],
                   ),
                 ],
