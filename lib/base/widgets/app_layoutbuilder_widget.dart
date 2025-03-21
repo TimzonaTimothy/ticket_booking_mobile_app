@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppLayoutBuilderWidget extends StatelessWidget {
   final int randeomDivider;
+  final double width;
 
-  const AppLayoutBuilderWidget({super.key, required this.randeomDivider});
+  const AppLayoutBuilderWidget(
+      {super.key, required this.randeomDivider, this.width = 3});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,10 @@ class AppLayoutBuilderWidget extends StatelessWidget {
         direction: Axis.horizontal,
         children: List.generate(
             (constraints.constrainWidth() / randeomDivider).floor(),
-            (index) => const SizedBox(
-                  width: 3,
+            (index) => SizedBox(
+                  width: width,
                   height: 1,
-                  child: DecoratedBox(
+                  child: const DecoratedBox(
                       decoration: BoxDecoration(color: Colors.white)),
                 )),
       );
