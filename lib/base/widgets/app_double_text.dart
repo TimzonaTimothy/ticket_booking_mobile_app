@@ -11,10 +11,10 @@ class AppDoubleText extends StatelessWidget {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(bigText, style: AppStyles.headLineStyle2,), 
+        Text(bigText, style: AppStyles.headLineStyle2, overflow: TextOverflow.ellipsis,), 
         InkWell(
           onTap: (){},
-          child: Text(smallText, style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),), 
+          child: Text(smallText, style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor), overflow: TextOverflow.ellipsis,), 
         )
       ],
     );
