@@ -122,74 +122,27 @@ class TicketView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                     AppColumnTextLayout(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          TextStyleThird(text: '1 May'),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          TextStyleThird(text: 'DATE'),
-                        ],
+                      AppColumnTextLayout(
+                        topText: '1 May',
+                        bottomText: 'Date',
+                        alignment: CrossAxisAlignment.start,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          TextStyleThird(text: '1 May'),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          TextStyleThird(text: 'DATE'),
-                        ],
+                      AppColumnTextLayout(
+                        topText: '08: 800 AM',
+                        bottomText: 'Departure time',
+                        alignment: CrossAxisAlignment.center,
                       ),
-                      // Expanded(child: Container()),
-                      // Text(
-                      //   '08: 800 AM',
-                      //   style: AppStyles.headLineStyle4
-                      //       .copyWith(color: Colors.white),
-                      //   overflow: TextOverflow.ellipsis,
-                      // ),
-                      // Expanded(child: Container()),
-                      // Text(
-                      //   '23',
-                      //   style: AppStyles.headLineStyle4
-                      //       .copyWith(color: Colors.white),
-                      //   overflow: TextOverflow.ellipsis,
-                      // ),
+                      AppColumnTextLayout(
+                        topText: '23',
+                        bottomText: 'Number',
+                        alignment: CrossAxisAlignment.end,
+                      ),
                     ],
                   ),
 
                   SizedBox(
                     height: 3,
                   ),
-
-                  //show departure and destination names
-
-                  // Row(
-                  //   children: [
-                  //     Text(
-                  //       'Date',
-                  //       style: AppStyles.headLineStyle4
-                  //           .copyWith(color: Colors.white),
-                  //       overflow: TextOverflow.ellipsis,
-                  //     ),
-                  //     Expanded(child: Container()),
-                  //     Text(
-                  //       'Departure time',
-                  //       style: AppStyles.headLineStyle4
-                  //           .copyWith(color: Colors.white),
-                  //       overflow: TextOverflow.ellipsis,
-                  //     ),
-                  //     Expanded(child: Container()),
-                  //     Text(
-                  //       'Number',
-                  //       style: AppStyles.headLineStyle4
-                  //           .copyWith(color: Colors.white),
-                  //       overflow: TextOverflow.ellipsis,
-                  //     ),
-                  //   ],
-                  // ),
                 ],
               ),
             ),
