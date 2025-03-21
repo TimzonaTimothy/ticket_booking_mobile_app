@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
+import 'app_column_text_layout.dart';
 import 'app_layoutbuilder_widget.dart';
 import 'big_circle.dart';
 import 'big_dot.dart';
@@ -72,18 +73,17 @@ class TicketView extends StatelessWidget {
                       const SizedBox(
                           width: 100, child: TextStyleFourth(text: 'Enugu')),
                       Expanded(child: Container()),
-                      Text(
-                        '1H 30M',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
+                      const TextStyleFourth(
+                        text: "1H 30M",
                       ),
                       Expanded(child: Container()),
                       const SizedBox(
-                          width: 100,
-                          child: TextStyleFourth(
-                            text: 'Abuja',
-                          )),
+                        width: 100,
+                        child: TextStyleFourth(
+                          text: 'Abuja',
+                          align: TextAlign.end,
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -116,64 +116,80 @@ class TicketView extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(21),
                       bottomRight: Radius.circular(21))),
-              child: Column(
+              child: const Column(
                 children: [
                   // show departure and destination with icons first line
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '1 May',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
+                     AppColumnTextLayout(),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          TextStyleThird(text: '1 May'),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          TextStyleThird(text: 'DATE'),
+                        ],
                       ),
-                      Expanded(child: Container()),
-                      Text(
-                        '08: 800 AM',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          TextStyleThird(text: '1 May'),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          TextStyleThird(text: 'DATE'),
+                        ],
                       ),
-                      Expanded(child: Container()),
-                      Text(
-                        '23',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      // Expanded(child: Container()),
+                      // Text(
+                      //   '08: 800 AM',
+                      //   style: AppStyles.headLineStyle4
+                      //       .copyWith(color: Colors.white),
+                      //   overflow: TextOverflow.ellipsis,
+                      // ),
+                      // Expanded(child: Container()),
+                      // Text(
+                      //   '23',
+                      //   style: AppStyles.headLineStyle4
+                      //       .copyWith(color: Colors.white),
+                      //   overflow: TextOverflow.ellipsis,
+                      // ),
                     ],
                   ),
 
-                  const SizedBox(
+                  SizedBox(
                     height: 3,
                   ),
 
                   //show departure and destination names
 
-                  Row(
-                    children: [
-                      Text(
-                        'Date',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        'Departure time',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        'Number',
-                        style: AppStyles.headLineStyle4
-                            .copyWith(color: Colors.white),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Text(
+                  //       'Date',
+                  //       style: AppStyles.headLineStyle4
+                  //           .copyWith(color: Colors.white),
+                  //       overflow: TextOverflow.ellipsis,
+                  //     ),
+                  //     Expanded(child: Container()),
+                  //     Text(
+                  //       'Departure time',
+                  //       style: AppStyles.headLineStyle4
+                  //           .copyWith(color: Colors.white),
+                  //       overflow: TextOverflow.ellipsis,
+                  //     ),
+                  //     Expanded(child: Container()),
+                  //     Text(
+                  //       'Number',
+                  //       style: AppStyles.headLineStyle4
+                  //           .copyWith(color: Colors.white),
+                  //       overflow: TextOverflow.ellipsis,
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
