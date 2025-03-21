@@ -84,8 +84,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 const AppDoubleText(
                   bigText: 'Upcoming lights',
                   smallText: 'view all',
-                ), 
-                TicketView(),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const TicketView(),
               ],
             ),
           ),
