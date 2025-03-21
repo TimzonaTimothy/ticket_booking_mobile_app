@@ -4,6 +4,7 @@ import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
 
 import '../base/res/styles/app_styles.dart';
+import '../base/widgets/ticket_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -77,12 +78,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                 SizedBox(height: 40,), 
-          AppDoubleText(bigText: 'Upcmoing lights', smallText: 'view all',)
+                const SizedBox(
+                  height: 40,
+                ),
+                const AppDoubleText(
+                  bigText: 'Upcmoing lights',
+                  smallText: 'view all',
+                ), 
+                TicketView(),
               ],
             ),
           ),
-         
         ],
       ),
     );
