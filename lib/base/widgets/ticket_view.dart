@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
+import 'app_layoutbuilder_widget.dart';
 import 'big_dot.dart';
 
 class TicketView extends StatelessWidget {
@@ -25,25 +26,35 @@ class TicketView extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'NYC',
+                  'ENU',
                   style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
                   overflow: TextOverflow.ellipsis,
                 ),
                 Expanded(child: Container()),
                 const BigDot(),
-                const Expanded(
+                Expanded(
                     child: Stack(
                   children: [
-                    SizedBox(
-                      child: Text("-------------"),
-                    ), 
-                    Center(child: Text("Plane"),)
+                    const SizedBox(
+                      height: 24,
+                      child: AppLayoutBuilderWidget(
+                        randeomDivider: 6,
+                      ),
+                    ),
+                    Center(
+                      child: Transform.rotate(
+                          angle: 1.5,
+                          child: const Icon(
+                            Icons.local_airport_rounded,
+                            color: Colors.white,
+                          )),
+                    )
                   ],
                 )),
                 const BigDot(),
                 Expanded(child: Container()),
                 Text(
-                  'NYC',
+                  'ABJ',
                   style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
                   overflow: TextOverflow.ellipsis,
                 ),
