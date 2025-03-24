@@ -2,12 +2,12 @@
 List<Map<String, dynamic>> ticketList = [
   {
     'from': {
-      'code':"NYC",
-      'name':"New-York"
+      'code':"ENU",
+      'name':"Enugu"
     },
     'to': {
-      'code':"LDN",
-      'name':"London"
+      'code':"ABJ",
+      'name':"Abuja"
     },
     'flying_time': '8H 30M',
     'date': "1 MAY",
