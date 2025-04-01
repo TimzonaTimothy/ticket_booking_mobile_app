@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_app/screens/all_tickets.dart';
 
 import 'base/bottom_nav_bar.dart';
+import 'base/utils/app_routes.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -9,19 +12,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const BottomNavBar(),
-      
+      routes: {
+        AppRoutes.homePage: (context) => const BottomNavBar(),
+        AppRoutes.allTickets: (context) => const AllTickets()
+      },
     );
   }
 }

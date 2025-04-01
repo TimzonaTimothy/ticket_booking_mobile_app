@@ -5,7 +5,9 @@ import 'package:ticket_app/base/widgets/app_double_text.dart';
 
 import '../base/res/styles/app_styles.dart';
 import '../base/utils/all_json.dart';
+import '../base/utils/app_routes.dart';
 import '../base/widgets/ticket_view.dart';
+import 'widgets/hotel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,9 +85,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                const AppDoubleText(
+                AppDoubleText(
                   bigText: 'Upcoming lights',
                   smallText: 'view all',
+                  func: () =>
+                      Navigator.pushNamed(context, AppRoutes.allTickets),
                 ),
                 const SizedBox(
                   height: 20,
@@ -97,6 +102,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           .map((singleTicket) =>
                               TicketView(ticket: singleTicket))
                           .toList(),
+                    )),
+                const SizedBox(
+                  height: 40,
+                ),
+                AppDoubleText(
+                  bigText: 'Hotels',
+                  smallText: 'view all',
+                  func: () {},
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Hotel(),
+                        Hotel(),
+                        Hotel(),
+                        Hotel(),
+                        Hotel(),
+                        Hotel(),
+                      ],
                     )),
               ],
             ),
