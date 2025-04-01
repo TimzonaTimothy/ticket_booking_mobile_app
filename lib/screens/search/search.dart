@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
+import 'widgets/app_ticket_tabs.dart';
+
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
@@ -12,7 +14,9 @@ class SearchScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children:  [
           SizedBox(height: 40,),
-          Text("What are\nyou looking for?", style: AppStyles.headLineStyle1.copyWith(fontSize: 35),)
+          Text("What are\nyou looking for?", style: AppStyles.headLineStyle1.copyWith(fontSize: 35),), 
+          SizedBox(height: 20,),
+          AppTicketTabs()
         ],
       ),
     );
