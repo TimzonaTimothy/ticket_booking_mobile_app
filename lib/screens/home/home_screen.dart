@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
 
-import '../base/res/styles/app_styles.dart';
-import '../base/utils/all_json.dart';
-import '../base/utils/app_routes.dart';
-import '../base/widgets/ticket_view.dart';
+import '../../base/res/styles/app_styles.dart';
+import '../../base/utils/all_json.dart';
+import '../../base/utils/app_routes.dart';
+import '../../base/widgets/ticket_view.dart';
 import 'widgets/hotel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -114,17 +114,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const SingleChildScrollView(
+               SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
-                      children: [
-                        Hotel(),
-                        Hotel(),
-                        Hotel(),
-                        Hotel(),
-                        Hotel(),
-                        Hotel(),
-                      ],
+                      children: hotelList
+                          .take(2)
+                          .map((singleHotel) =>
+                              Hotel(hotel: singleHotel))
+                          .toList(),
                     )),
               ],
             ),

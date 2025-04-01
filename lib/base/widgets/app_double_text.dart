@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
-import '../../screens/all_tickets.dart';
+import '../../screens/home/all_tickets.dart';
 import '../utils/app_routes.dart';
 
 class AppDoubleText extends StatelessWidget {
