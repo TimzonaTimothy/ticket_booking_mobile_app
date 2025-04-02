@@ -27,7 +27,10 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const AppTicketTabs(),
+          const AppTicketTabs(
+            firstTab: "All Tickets",
+            secondTab: "Hotels",
+          ),
           const SizedBox(
             height: 25,
           ),
@@ -52,8 +55,7 @@ class SearchScreen extends StatelessWidget {
           AppDoubleText(
             bigText: 'Upcoming Flights',
             smallText: 'view all',
-            func: () =>
-                      Navigator.pushNamed(context, AppRoutes.allTickets),
+            func: () => Navigator.pushNamed(context, AppRoutes.allTickets),
           ),
         ],
       ),
