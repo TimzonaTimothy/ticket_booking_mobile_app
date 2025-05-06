@@ -16,171 +16,189 @@ class TicketScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        shrinkWrap: true,
-        children: [
-          const SizedBox(
-            height: 40,
-          ),
-          Text(
-            "Tickets",
-            style: AppStyles.headLineStyle1,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const AppTicketTabs(
-            firstTab: "Upcoming",
-            secondTab: "Previous",
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-
-          // black and white ticket 
-          Container(
-              padding: const EdgeInsets.only(left: 16),
-              child: TicketView(
-                ticket: ticketList[0],
-                isColor: true,
-              )),
-          const SizedBox(
-            height: 1,
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 15),
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-            color: AppStyles.ticketColorWhite,
-            child: Column(
-              children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppColumnTextLayout(
-                      topText: '2455 6545567543',
-                      bottomText: 'Number of E-ticket',
-                      alignment: CrossAxisAlignment.start,
-                      isColor: true,
-                    ),
-                    AppColumnTextLayout(
-                      topText: '368736',
-                      bottomText: 'Booking code',
-                      alignment: CrossAxisAlignment.end,
-                      isColor: true,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const AppLayoutBuilderWidget(
-                  randeomDivider: 15,
-                  width: 5,
-                  isColor: false,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppColumnTextLayout(
-                      topText: 'DB',
-                      bottomText: 'Pass',
-                      alignment: CrossAxisAlignment.start,
-                      isColor: true,
-                    ),
-                    AppColumnTextLayout(
-                      topText: '5221 368736',
-                      bottomText: 'Passport',
-                      alignment: CrossAxisAlignment.end,
-                      isColor: true,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const AppLayoutBuilderWidget(
-                  randeomDivider: 15,
-                  width: 5,
-                  isColor: false,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              AppMedia.visaCard,
-                              scale: 11,
-                            ),
-                            Text(
-                              ' *** 2462',
-                              style: AppStyles.headLineStyle3,
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "Payment Method",
-                          style: AppStyles.headLineStyle4,
-                        )
-                      ],
-                    ),
-                    const AppColumnTextLayout(
-                      topText: '\$299.99',
-                      bottomText: 'Price',
-                      alignment: CrossAxisAlignment.end,
-                      isColor: true,
-                    ),
-                  ],
-                ),
-              ],
+      body: Stack(children: [
+        ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          shrinkWrap: true,
+          children: [
+            const SizedBox(
+              height: 40,
             ),
-          ),
-          SizedBox(height: 1,),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 15),
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            decoration: BoxDecoration(
-                color: AppStyles.ticketColorWhite,
-                borderRadius: const BorderRadius.only(
-                    bottomRight: Radius.circular(21),
-                    bottomLeft: Radius.circular(21))),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: BarcodeWidget(
-                  height: 70,
-                  barcode: Barcode.code128(),
-                  data: 'https://www.google.com',
-                  drawText: false,
-                  color: AppStyles.textColor,
-                  width: double.infinity,
+            Text(
+              "Tickets",
+              style: AppStyles.headLineStyle1,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const AppTicketTabs(
+              firstTab: "Upcoming",
+              secondTab: "Previous",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            // black and white ticket
+            Container(
+                padding: const EdgeInsets.only(left: 16),
+                child: TicketView(
+                  ticket: ticketList[0],
+                  isColor: true,
+                )),
+            const SizedBox(
+              height: 1,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+              color: AppStyles.ticketColorWhite,
+              child: Column(
+                children: [
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AppColumnTextLayout(
+                        topText: '2455 6545567543',
+                        bottomText: 'Number of E-ticket',
+                        alignment: CrossAxisAlignment.start,
+                        isColor: true,
+                      ),
+                      AppColumnTextLayout(
+                        topText: '368736',
+                        bottomText: 'Booking code',
+                        alignment: CrossAxisAlignment.end,
+                        isColor: true,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const AppLayoutBuilderWidget(
+                    randeomDivider: 15,
+                    width: 5,
+                    isColor: false,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AppColumnTextLayout(
+                        topText: 'DB',
+                        bottomText: 'Pass',
+                        alignment: CrossAxisAlignment.start,
+                        isColor: true,
+                      ),
+                      AppColumnTextLayout(
+                        topText: '5221 368736',
+                        bottomText: 'Passport',
+                        alignment: CrossAxisAlignment.end,
+                        isColor: true,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const AppLayoutBuilderWidget(
+                    randeomDivider: 15,
+                    width: 5,
+                    isColor: false,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                AppMedia.visaCard,
+                                scale: 11,
+                              ),
+                              Text(
+                                ' *** 2462',
+                                style: AppStyles.headLineStyle3,
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Payment Method",
+                            style: AppStyles.headLineStyle4,
+                          )
+                        ],
+                      ),
+                      const AppColumnTextLayout(
+                        topText: '\$299.99',
+                        bottomText: 'Price',
+                        alignment: CrossAxisAlignment.end,
+                        isColor: true,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 1,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              decoration: BoxDecoration(
+                  color: AppStyles.ticketColorWhite,
+                  borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(21),
+                      bottomLeft: Radius.circular(21))),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: BarcodeWidget(
+                    height: 70,
+                    barcode: Barcode.code128(),
+                    data: 'https://www.google.com',
+                    drawText: false,
+                    color: AppStyles.textColor,
+                    width: double.infinity,
+                  ),
                 ),
               ),
             ),
-          ), 
-          SizedBox(height: 20,),
-          // colourful ticket 
-          Container(
-              padding: const EdgeInsets.only(left: 16),
-              child: TicketView(
-                ticket: ticketList[0],
-               
-              )),
-        ],
-      ),
+            const SizedBox(
+              height: 20,
+            ),
+            // colourful ticket
+            Container(
+                padding: const EdgeInsets.only(left: 16),
+                child: TicketView(
+                  ticket: ticketList[0],
+                )),
+          ],
+        ),
+        Positioned(
+          left: 22, 
+          top: 250,
+            child: Container(
+              padding: EdgeInsets.all(3), 
+              decoration: BoxDecoration(
+                shape: BoxShape.circle, 
+                border: Border.all(width: 2, color: AppStyles.textColor)
+              ),
+                child: CircleAvatar(
+          maxRadius: 4,
+          backgroundColor: AppStyles.textColor,
+        ))), 
+      ]),
     );
   }
 }
