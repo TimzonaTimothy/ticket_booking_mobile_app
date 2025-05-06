@@ -1,3 +1,4 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
@@ -36,6 +37,8 @@ class TicketScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
+
+          // black and white ticket 
           Container(
               padding: const EdgeInsets.only(left: 16),
               child: TicketView(
@@ -143,7 +146,39 @@ class TicketScreen extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(height: 1,),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            decoration: BoxDecoration(
+                color: AppStyles.ticketColorWhite,
+                borderRadius: const BorderRadius.only(
+                    bottomRight: Radius.circular(21),
+                    bottomLeft: Radius.circular(21))),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: BarcodeWidget(
+                  height: 70,
+                  barcode: Barcode.code128(),
+                  data: 'https://www.google.com',
+                  drawText: false,
+                  color: AppStyles.textColor,
+                  width: double.infinity,
+                ),
+              ),
+            ),
+          ), 
+          SizedBox(height: 20,),
+          // colourful ticket 
+          Container(
+              padding: const EdgeInsets.only(left: 16),
+              child: TicketView(
+                ticket: ticketList[0],
+               
+              )),
         ],
       ),
     );
