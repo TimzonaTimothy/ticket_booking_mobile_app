@@ -52,11 +52,11 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          AppDoubleText(
-            bigText: 'Upcoming Flights',
-            smallText: 'view all',
-            func: () => Navigator.pushNamed(context, AppRoutes.allTickets),
-          ),
+          // AppDoubleText(
+          //   bigText: 'Upcoming Flights',
+          //   smallText: 'view all',
+          //   func: () => Navigator.pushNamed(context, AppRoutes.allTickets),
+          // ),
         ],
       ),
     );
